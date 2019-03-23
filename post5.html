@@ -77,18 +77,18 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>On the first week I start to install the camera supports on the car roof (figure below). However, now it's necessary to machine the part that will suport the camera on the rotative support and to 3D print the box that will protect the camera. </p>
+          <p>On the first week I started to install the camera supports on the car roof (figure below). However, now it's necessary to machine the part that will suport the camera on the rotative support and to 3D print the box that will protect the camera. </p>
 
           <img class="img-fluid" src="img/tejadilho.png" alt="">
 
-          <p>Then, I start to implement some algorithms on the developed architecture. The first one was a ROS package that scans the image captured by the camera looking for white, yellow and red lines and calculates the error in pixel from the middle of the lane. It subscribes the "image_topic" topic and publishes the error value on the "lane_detection" topic. The implementation of this algorithm was easy but I think that the results weren't the desired because I want algorithms that are able to detect the road lanes in terms of image position.</p>
+          <p>Then, I started to implement some algorithms on the developed architecture. The first one was a ROS package that scans the image captured by the camera looking for white, yellow and red lines and calculates the error in pixel from the middle of the lane. It subscribes the "image_topic" topic and publishes the error value on the "lane_detection" topic. The implementation of this algorithm was easy but I think that the results weren't the desired because I want algorithms that are able to detect the road lanes in geometric terms.</p>
 
 
-          <p>So I had to start digging on GitHub in order to get a reasonable algorithm and I found the ROS package Lane_Detector developed by Nsteel and where he implemented Classic Computer Vision Techniques. This algorithm brought several problems to solve in terms of libraries versions because it uses the OpenCV 2 and ROS Indigo versions. Finally, I solved the problems and I think that I achieve an important stage in my journey, because I think that this algorithm is robust and uses some interesting techniques like the Kalman Filter, which is a filter used to track an object. This filter is relevant to my project because sometimes the road lanes are undetectable and this algorithm allows to predict where the lane is, based on previous lanes detections. One disadvantage of this algorithm is that I can't show a visual result because the algorithm uses the OpenCV 2, which cause an error when using imshow OpenCV function (due to GTK versions). However I solved that, building a node to show the processed image. It'ś important to refer that this algorithm has 3 subscribed topics:</p>
+          <p>So I had to start digging on GitHub in order to get a reasonable algorithm and I found the ROS package Lane_Detector developed by Nsteel, where he implemented Classic Computer Vision Techniques. This algorithm brought several problems to solve in terms of libraries versions because it uses the OpenCV 2 and ROS Indigo. Finally, I solved the problems and I think that I achieve an important stage in my journey, because I think that this algorithm is robust and uses some interesting techniques like the Kalman Filter, which is a filter used to track an object. This filter is relevant to my project because sometimes the road lanes are undetectable and this algorithm allows to predict where the lane is, based on previous lanes detections. One disadvantage of this algorithm is that I can't show a visual result because the algorithm uses the OpenCV 2, which cause an error when using imshow OpenCV function (due to GTK versions). However I solved that, building a node that shows the processed image. It'ś important to refer that this algorithm has 3 subscribed topics:</p>
           <p>-/image (sensor_msgs/Image): Input image.</p>
           <p>-/camera_info (sensor_msgs/CameraInfo): Camera calibration data.</p>
           <p>-/lane_detector/driving_orientation (std_msgs::Int32): Topic to change lane. 0 to drive on the right and 1 to drive on the left.</p>
-          <p> And on published topic:</p>
+          <p> And one published topic:</p>
           <p>/lane_detector/lane (lane_detector::Lane): returns the lanes positions on the road.</p>
 
           <img class="img-fluid" src="img/processing_alg1.png" alt="">
@@ -97,8 +97,8 @@
 
           <!-- Pager -->
           <div class="clearfix">
-            <a class="btn btn-primary float-left" href="post.html">&larr;Previous Week</a>
-            <a class="btn btn-primary float-right" href="post3e4.html">Next Week &rarr;</a>
+            <a class="btn btn-primary float-left" href="post3e4.html">&larr;Previous Week</a>
+            <a class="btn btn-primary float-right" href="post5.html">Next Week &rarr;</a>
           </div>
         </div>
       </div>

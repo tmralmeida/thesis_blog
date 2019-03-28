@@ -61,11 +61,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Week 5</h1>
-            <h2 class="subheading">...</h2>
+            <h1>Week 6</h1>
+            <h2 class="subheading">Study to know what we are doing!</h2>
             <span class="meta">Posted by
               <a href="about.html">Tiago Almeida</a>
-              on March 21, 2019</span>
+              on March 28, 2019</span>
           </div>
         </div>
       </div>
@@ -77,27 +77,24 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>On the first week I started to install the camera supports on the car roof (figure below). However, now it's necessary to machine the part that will suport the camera on the rotative support and to 3D print the box that will protect the camera. </p>
+          <p>At the beginning of the week, I tried to do the migration to lastest versions of Ubuntu and ROS on the ATLASCAR computer, however, there were some logistic problems that I think that in the next week will be solved. </p>
 
-          <img class="img-fluid" src="img/tejadilho.png" alt="">
+          <p>After that, I finished the algorithm study and I think is quite important to clarify the algorithm pipeline. The procedures start by applying the IPM (Inverse Perspective Mapping) thecnique, which has as requirements the intrinsic and 
+            extrinsic camera parameters. This method allows to suppress the image distortion. Then, the images features are extracted by the RANSAC method and converted to splines. The next step is to update and track the lines that are   
+            sequentially found and for this the Kalman filter is allied to the Hungarian Algorithm. The Kalman filter is used to track the lines but needs an optimization method (Hungarian Algorithm) to do that.
+            It's also important to say that this algorithm has multithreading processes, which may lead to a faster overall execution.   
 
-          <p>Then, I started to implement some algorithms on the developed architecture. The first one was a ROS package that scans the image captured by the camera looking for white, yellow and red lines and calculates the error in pixel from the middle of the lane. It subscribes the "image_topic" topic and publishes the error value on the "lane_detection" topic. The implementation of this algorithm was easy but I think that the results weren't the desired because I want algorithms that are able to detect the road lanes in geometric terms.</p>
 
+          </p>
+          
 
-          <p>So I had to start digging on GitHub in order to get a reasonable algorithm and I found the ROS package Lane_Detector developed by Nsteel, where he implemented Classic Computer Vision Techniques. This algorithm brought several problems to solve in terms of libraries versions because it uses the OpenCV 2 and ROS Indigo. Finally, I solved the problems and I think that I achieve an important stage in my journey, because I think that this algorithm is robust and uses some interesting techniques like the Kalman Filter, which is a filter used to track an object. This filter is relevant to my project because sometimes the road lanes are undetectable and this algorithm allows to predict where the lane is, based on previous lanes detections. One disadvantage of this algorithm is that I can't show a visual result because the algorithm uses the OpenCV 2, which cause an error when using imshow OpenCV function (due to GTK versions). However I solved that, building a node that shows the processed image. It'ś important to refer that this algorithm has 3 subscribed topics:</p>
-          <p>-/image (sensor_msgs/Image): Input image.</p>
-          <p>-/camera_info (sensor_msgs/CameraInfo): Camera calibration data.</p>
-          <p>-/lane_detector/driving_orientation (std_msgs::Int32): Topic to change lane. 0 to drive on the right and 1 to drive on the left.</p>
-          <p> And one published topic:</p>
-          <p>/lane_detector/lane (lane_detector::Lane): returns the lanes positions on the road.</p>
-
-          <img class="img-fluid" src="img/processing_alg1.png" alt="">
+          
 
           
 
           <!-- Pager -->
           <div class="clearfix">
-            <a class="btn btn-primary float-left" href="post3e4.html">&larr;Previous Week</a>
+            <a class="btn btn-primary float-left" href="post5.html">&larr;Previous Week</a>
             <a class="btn btn-primary float-right" href="post6.html">Next Week &rarr;</a>
           </div>
         </div>

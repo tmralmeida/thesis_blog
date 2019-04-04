@@ -55,17 +55,17 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/road_lanes.png')">
+  <header class="masthead" style="background-image: url('img/eurej.png')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Week 5</h1>
-            <h2 class="subheading">...</h2>
+            <h1>Week 6</h1>
+            <h2 class="subheading">New ideas...</h2>
             <span class="meta">Posted by
               <a href="about.html">Tiago Almeida</a>
-              on March 21, 2019</span>
+              on March 04, 2019</span>
           </div>
         </div>
       </div>
@@ -77,28 +77,27 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>On the first week I started to install the camera supports on the car roof (figure below). However, now it's necessary to machine the part that will suport the camera on the rotative support and to 3D print the box that will protect the camera. </p>
+          <p>First it is important to say that this stage of my dissertation is the best that I've been because crucial decisions will be taken. One clear example of that, is the next stage of the architecture - referee stage - yes, a stage and not 
+              a node because there will be more than one node on that. For me the architecture core is here and the  most important detail of this stage is its goal: to draw a probabilities map. But how? The first idea that showed up is based on Math and it consists of transforming the treated images into gauss functions. For example the guide line (line between the two lines detected) is the one that is the most likely (the function's peak) in terms of making part of the road. Then, for example, the detected  lines (right and left) are those that might be one +/- standard deviation. After that, it is necessary to sum all of the gauss functions to obtain one with the probability density.  </p>
+              <img class="img-gauss" src="img/Gaussian.png" alt="">
+            <p>However this seems to be a little complicated to implement. Due to this, the second idea came and is the one that I like more. The procedures start by merging the "n" treated images' data that came from the detection algorithms. After that, the road area is painted which is confined by the two lines that are detected. Next, the merging of the images is done in order to get the intersected (safe zone) and non intersected regions. So, the objective is to apply a filter on the image pixels, which returns how many pixels are in the safe zone and this number divided by the filter size gives a probability. This will give rise to the probability map.     </p>
+            <p>The current state of the architecture is showed on the video below:</p>
+            <iframe width="640" height="330"
+            src="https://www.youtube.com/watch?v=Hv3pgcwQmVQ" align="center"></iframe> 
+            <p>To obtain this I simulated a second algorithm, which in fact is equal to the first one that was found but with different parameters.</p>
+              
 
-          <img class="img-fluid" src="img/tejadilho.png" alt="">
+          
+          
 
-          <p>Then, I started to implement some algorithms on the developed architecture. The first one was a ROS package that scans the image captured by the camera looking for white, yellow and red lines and calculates the error in pixel from the middle of the lane. It subscribes the "image_topic" topic and publishes the error value on the "lane_detection" topic. The implementation of this algorithm was easy but I think that the results weren't the desired because I want algorithms that are able to detect the road lanes in geometric terms.</p>
-
-
-          <p>So I had to start digging on GitHub in order to get a reasonable algorithm and I found the ROS package Lane_Detector developed by Nsteel, where he implemented Classic Computer Vision Techniques. This algorithm brought several problems to solve in terms of libraries versions because it uses the OpenCV 2 and ROS Indigo. Finally, I solved the problems and I think that I achieve an important stage in my journey, because I think that this algorithm is robust and uses some interesting techniques like the Kalman Filter, which is a filter used to track an object. This filter is relevant to my project because sometimes the road lanes are undetectable and this algorithm allows to predict where the lane is, based on previous lanes detections. One disadvantage of this algorithm is that I can't show a visual result because the algorithm uses the OpenCV 2, which cause an error when using imshow OpenCV function (due to GTK versions). However I solved that, building a node that shows the processed image. It'ś important to refer that this algorithm has 3 subscribed topics:</p>
-          <p>-/image (sensor_msgs/Image): Input image.</p>
-          <p>-/camera_info (sensor_msgs/CameraInfo): Camera calibration data.</p>
-          <p>-/lane_detector/driving_orientation (std_msgs::Int32): Topic to change lane. 0 to drive on the right and 1 to drive on the left.</p>
-          <p> And one published topic:</p>
-          <p>/lane_detector/lane (lane_detector::Lane): returns the lanes positions on the road.</p>
-
-          <img class="img-fluid" src="img/processing_alg1.png" alt="">
+          
 
           
 
           <!-- Pager -->
           <div class="clearfix">
-            <a class="btn btn-primary float-left" href="post3e4.html">&larr;Previous Week</a>
-            <a class="btn btn-primary float-right" href="post5.html">Next Week &rarr;</a>
+            <a class="btn btn-primary float-left" href="post6.html">&larr;Previous Week</a>
+            <a class="btn btn-primary float-right" href="post7.html">Next Week &rarr;</a>
           </div>
         </div>
       </div>

@@ -82,8 +82,7 @@
               <img class="img-gauss" src="img/Gaussian.png" alt="">
             <p>However this seems to be a little complicated to implement. Due to this, the second idea came and is the one that I like more. The procedures start by merging the "n" treated images' data that came from the detection algorithms. After that, the road area is painted which is confined by the two lines that are detected. Next, the merging of the images is done in order to get the intersected (safe zone) and non intersected regions. So, the objective is to apply a filter on the image pixels, which returns how many pixels are in the safe zone and this number divided by the filter size gives a probability. This will give rise to the probability map.     </p>
             <p>The current state of the architecture is showed on the video below:</p>
-            <iframe width="640" height="330"
-            src="https://www.youtube.com/watch?v=Hv3pgcwQmVQ" align="center"></iframe> 
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Hv3pgcwQmVQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p>To obtain this I simulated a second algorithm, which in fact is equal to the first one that was found but with different parameters.</p>
               
 

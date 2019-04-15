@@ -81,10 +81,10 @@
                         "data_treatment" and its concern is to receive the return of each algorithm and to process that
                         data.</p>
                     <p> This package is composed by two main nodes- the "subscriber" and the "junction_data". The first
-                        one receives the lines detected coordinates and draw them on an image forming a polygn. The second node receives the previous polygns and merge
+                        one receives the lines detected coordinates and draw them on an image forming a polygn. The second node receives the polygns and merge
                         them in the same image. After that, the intesection region ("road zone") is found, where is
-                        applied a convolutional filter allowing to know the probability of each pixel belongs to the
-                        road zone. It is important to refer that the zones of each polygn that doesn's make part of the intersection region has also a probability, but lower than the probability of the pixels that are on the boundaries of the "road zone".</p>
+                        applied a convolutional filter allowing to know the probability of each pixel to make part of the
+                        road zone. It is important to refer that the zones of each polygn, which doesn's make part of the "road zone" has also a probability, but lower than the probability of the pixels that are on the boundaries of the "road zone".</p>
                     <p>The video below shows the pipeline of the "data_treatment" package:
                     </p>
                     <p><iframe width="560" height="315" src="https://www.youtube.com/embed/KOsh9PaaE38" frameborder="0"

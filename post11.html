@@ -55,17 +55,17 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/week10.png')">
+    <header class="masthead" style="background-image: url('img/weekPosts.jpg')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="post-heading">
-                        <h1>Week 9-10</h1>
-                        <h2 class="subheading">One step further...</h2>
+                        <h1>Week 11</h1>
+                        <h2 class="subheading">Camera setup...</h2>
                         <span class="meta">Posted by
                             <a href="about.html">Tiago Almeida</a>
-                            on April 25, 2019</span>
+                            on May 2, 2019</span>
                     </div>
                 </div>
             </div>
@@ -78,27 +78,14 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
 
-                    <p>On the first week, I started to look for one more algorithm to detect road lines. There are several algorithms developed by different authors during the Udacity course. All of these algorithms follow the same pipeline:</p>
-                    <p>-1st. stage: Image undistort;</p>
-                    <p>-2nd. stage: Image warping (Inverse Perspective Mapping application);</p>
-                    <p>-3rd. stage: Isolate Lanes (Threshold application in a color channel or application of edge filters );</p>
-                    <p>-4.th stage: Curve Fitting; This is the most important stage. Here, a histogram of the bottom half of the binary image is taken and wherever that histogram peaks that's where each line starts. Then, a box is drawn around those starting points and any of the white pixels that are inside of the box are stored. At the end of this, a vector of the points that belongs to the road lines is obtained and then a second order polyfit is applied to those pixels.  </p>
-
-                    <p>So, I found a C++ code of one of this algorithms and made it into a ROS package that is called advanced_lane_detection. It is important to say that unlike the first algorithm, it returns a polygon that corresponds to the road area and not the spatial location of the lines points.</p>
-                    <p>After that,  the architecture was prepared prepare to receive the polygn that is returned by this algorithm. However this was quite easy because the architecture is flexible enough. </p>
-                    <p> This algorithm caused a computational performance problem- the architecture returning (probabilistic map) was slower than ever. So, a study was made: "What is the influence of the image size in the architecture performance and velocity?". As a conclusion, I think that the image size that provides more reliable results and that allows to obtain less processing time is 640*480. So, I did the necessary changes on the architecture to do the original image rescale.</p>
-
-                    <p>Finally, the current stage of the architecture is the one that is showed on the video below:</p>
-
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Xdj2tzrtJl8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                    <p>One of the existing problems that aren't visual on this video as the road is always in the same location, is the asynchronous returning data. In a deeper way, it's possible to happen that the algorithms process different frames, which causes unreliable results because the final probabilistic map has different data sources.</p> 
-                    <p>So, the next step of my project is to find a way to do the synchronization between the algorithms in order to ensure that the probabilistic map is showing the road area that was determined through the same source data.</p>
+                    <p>This week, a temporary setup for the camera on ATLASCAR was prepared. The plate and all the supports were fixed to the existing aluminium profiles. Thus, when the camera's box is made, everything is ready to finish the camera instalation on the vehicle.   </p>
+                    <p>The second camera isn't working well because the computer can't connect with the camera. However, the problem was solved by forcing the camera IP in Flycap application.  </p>
+                    <p>During the week, the first model of the thesis was corrected by the advisor so it is necessary to correct and tune some aspects of the dissertation.  </p>
 
                 
                     <!-- Pager -->
                     <div class="clearfix">
-                        <a class="btn btn-primary float-left" href="post8.html">&larr;Previous Week</a>
+                        <a class="btn btn-primary float-left" href="post9e10.html">&larr;Previous Week</a>
                         <a class="btn btn-primary float-right" href="post11.html">Next Week &rarr;</a>
                     </div>
                 </div>

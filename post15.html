@@ -62,10 +62,10 @@
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="post-heading">
                         <h1>Week 15</h1>
-                        <h2 class="subheading">Alternatives to classical techniques</h2>
+                        <h2 class="subheading">Tests, experiments, results and one nice architecture feature...</h2>
                         <span class="meta">Posted by
                             <a href="about.html">Tiago Almeida</a>
-                            on June 08, 2019</span>
+                            on June 20, 2019</span>
                     </div>
                 </div>
             </div>
@@ -78,38 +78,41 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
 
-                    <p> There are other alternatives to the classic techniques based on Deep Learning. These approaches
-                        have been implemented in two ways:
+                    <p> In this week the experiments to prove the scalability of the architecture were made.
                     </p>
+                    <p>First Experiment - One camera and one algorithm, which provides a polygon that represents the road driveable zone (video below).</p>
+                   
                     <p>
-                        -LaneNet ROS package;
-                    </p>
-                    <p>
-                        -UNet Model.
-                    </p>
-                    <p> The former consists of an encoder-decoder stage, binary semantic segmentation stage and instance
-                        semanticsegmentation for a near real time lane detection task. The latter is based on a Fast AI
-                        lesson (tutorial) and it is not a ROS package but presents reliable results with small Dataset
-                        to trian the network. The type of learning technique that is going to be implemented is the
-                        semantic segmentation applied ina real road scenario.
-                    </p>
-                    <p> The results obtained were presented on the two videos below (to the LaneNet ROS package and the
-                        UNet Model, respectively):
-                    </p>
-                    <p>
-                        <video width="320" height="200" controls preload>
-                            <source src="videos/ml_vide.mp4">
-                            </source>
-                            <source src="videos/side_by_side.mp4">
-                            </source>
-                        </video>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3BtlI-vUs7c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </p>
+                    <p>Second Experiment - One camera and one algorithm that provides the road lines (video below). </p>
 
+                    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/E64RJM064AE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+                    
+                    <p>Third Experiment - One camera and two algorithms. (video below).</p>
+                    
+                    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/K-qZkqFqXOg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
+                    <p>Fourth Experiment - Two cameras and one algorithm, which provides a polygon that represents the road driveable zone (video below).</p>
+
+                    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/yV4LzMmHWAs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+                    <p>Fifth Experiment - Two cameras and one algorithm that provides the road lines (video below).</p>
+
+                    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/nyYJkwLNnpA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+                    <p>Last Experiment - Two cameras and two algorithms (video below) - this experiment is divided in three videos.</p>
+
+                    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/L_GTHxmF29g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+                    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/VIFYd-xRdzE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+                    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/y-1na8CJYws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+                    <p>Other feature of the architecture is the possibility to vary the filter that enables the probabilistic map construction (video below).</p>
+                    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/pcz9EQGOAGc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
                     <!-- Pager -->
                     <div class="clearfix">
-                        <a class="btn btn-primary float-left" href="post13.html">&larr;Previous Week</a>
+                        <a class="btn btn-primary float-left" href="post14.html">&larr;Previous Week</a>
                         <a class="btn btn-primary float-right" href="post15.html">Next Week &rarr;</a>
                     </div>
                 </div>
